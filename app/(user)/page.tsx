@@ -1,10 +1,38 @@
-function HomePage() {
-  return (
-    <div>
-      <h1 className="text-4xl">Welcome to the Bloge</h1>
-      <p>Somee contentt</p>
-    </div>
-  );
+import { previewData } from "next/headers";
+import { groq } from "next-sanity";
+import { client } from "../../lib/sanity.client";
+import PreviewSuspance from "../../components/PreviewSuspense";
+import PreviewBlogList from "../../components/PreviewBlogList";
+import BlogList from "../../components/BlogList";
+
+const query = groq`
+*[_type=='post'] {
+  ...,
+  author->,
+  categories[]->
+} | order(_createdAt desc)
+`;
+
+async function HomePage() {
+  if (previewData()) {
+    return (
+      <PreviewSuspance
+        fallback={
+          <div role="status">
+            <p className="text-center text-lg animate-pulse text-[F7AB0A]">
+              Loading Preview Data...{" "}
+            </p>
+          </div>
+        }
+      >
+        <PreviewBlogList query={query} />
+      </PreviewSuspance>
+    );
+  }
+
+  const posts = await client.fetch(query);
+
+  return <BlogList posts={posts} />;
 }
 
 export default HomePage;
