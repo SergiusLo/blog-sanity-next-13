@@ -8,18 +8,18 @@ function Header() {
         <Link href="/">
           <Image
             className="rounded-full"
-            src="/images/llogo.png"
+            src="/images/logo.svg"
             width={50}
             height={50}
             alt="logo"
           />
         </Link>
-        <h1>Leaf</h1>
+        <h1 className="uppercase text-green-700">Leaf</h1>
       </div>
       <div>
         <Link
           href="/"
-          className="px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full"
+          className="px-5 py-3 text-sm md:text-base bg-green-700 text-[#F7AB0A] flex items-center rounded-full"
         >
           Sign up to the lover plants
         </Link>
