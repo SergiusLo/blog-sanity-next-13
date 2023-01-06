@@ -8,7 +8,7 @@ function Header() {
         <Link href="/">
           <Image
             className="rounded-full"
-            src="/images/leaf-logo.png"
+            src="/images/llogo.png"
             width={50}
             height={50}
             alt="logo"
