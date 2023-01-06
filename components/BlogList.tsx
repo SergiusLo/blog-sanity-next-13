@@ -25,7 +25,7 @@ function BlogList({ posts }: Props) {
                   alt={post.author.name}
                   fill
                 />
-                <div className="absolute bottom-0 w-full bg-opacity-20 bg-black  rounded drop-shadow-lg backdrop-blur-lg text-white p-5 flex justify-between">
+                <div className="absolute bottom-0 w-full bg-opacity-20 bg-black  rounded drop-shadow-lg text-white p-5 flex justify-between">
                   <div>
                     <p className="font-bold">{post.title}</p>
                     <p>
