@@ -19,7 +19,7 @@ function Header() {
       <div>
         <Link
           href="/"
-          className="px-5 py-3 text-sm md:text-base bg-green-700 text-[#F7AB0A] flex items-center rounded-full"
+          className="px-5 py-3 mr-1 text-sm md:text-base bg-green-700 text-[#F7AB0A] flex items-center rounded-full"
         >
           Sign up to the lover plants
         </Link>
